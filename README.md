@@ -18,10 +18,10 @@ What things you need to install the software and how to install them
 
 Clone the repository onto local
 ```
-git clone git@github.com:jmsweb/spring-boot.git spring-boot
+git clone git@github.com:jmsweb/spring-auction-demo.git spring-auction-demo
 ```
 
-Navigate to `spring-boot/test-cms`
+Navigate to `spring-auction-demo/test-cms`
 ```
 cd spring-boot/test-cms
 ```
@@ -56,10 +56,10 @@ dorado@dorado-mac test-cms % mvn -pl test-web spring-boot:run
 [INFO] 
 [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ test-web ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /Users/dorado/workspace/eclipse-jee/spring-boot/test-cms/test-web/src/test/resources
+[INFO] skip non existing resourceDirectory /Users/dorado/workspace/eclipse-jee/spring-auction-demo/test-cms/test-web/src/test/resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ test-web ---
-[INFO] Nothing to compile - all classes are up to date
+[INFO] No sources to compile
 [INFO] 
 [INFO] <<< spring-boot-maven-plugin:2.2.7.RELEASE:run (default-cli) < test-compile @ test-web <<<
 [INFO] 
@@ -75,24 +75,24 @@ dorado@dorado-mac test-cms % mvn -pl test-web spring-boot:run
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.2.7.RELEASE)
 
-2020-05-10 02:41:24.813  INFO 6017 --- [           main] c.j.configuration.WebBootConfiguration   : Starting WebBootConfiguration on dorado-mac.local with PID 6017 (/Users/dorado/workspace/eclipse-jee/spring-boot/test-cms/test-web/target/classes started by dorado in /Users/dorado/workspace/eclipse-jee/spring-boot/test-cms/test-web)
-2020-05-10 02:41:24.815  INFO 6017 --- [           main] c.j.configuration.WebBootConfiguration   : No active profile set, falling back to default profiles: default
-2020-05-10 02:41:25.629  INFO 6017 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-05-10 02:41:25.640  INFO 6017 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-10 02:41:25.640  INFO 6017 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
-2020-05-10 02:41:25.885  INFO 6017 --- [           main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2020-05-10 02:41:25.899  INFO 6017 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-05-10 02:41:25.899 DEBUG 6017 --- [           main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2020-05-10 02:41:25.899  INFO 6017 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1035 ms
-2020-05-10 02:41:25.914 DEBUG 6017 --- [           main] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2020-05-10 02:41:25.914 DEBUG 6017 --- [           main] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
-2020-05-10 02:41:26.113  INFO 6017 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-10 02:41:26.124 DEBUG 6017 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2020-05-10 02:41:26.181 DEBUG 6017 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
-2020-05-10 02:41:26.207 DEBUG 6017 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2020-05-10 02:41:26.218 DEBUG 6017 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2020-05-10 02:41:26.318  INFO 6017 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-05-10 02:41:26.324  INFO 6017 --- [           main] c.j.configuration.WebBootConfiguration   : Started WebBootConfiguration in 2.155 seconds (JVM running for 2.599)
+2020-05-11 14:53:25.228  INFO 3708 --- [           main] c.j.configuration.WebBootConfiguration   : Starting WebBootConfiguration on dorado-mac.local with PID 3708 (/Users/dorado/workspace/eclipse-jee/spring-auction-demo/test-cms/test-web/target/classes started by dorado in /Users/dorado/workspace/eclipse-jee/spring-auction-demo/test-cms/test-web)
+2020-05-11 14:53:25.233  INFO 3708 --- [           main] c.j.configuration.WebBootConfiguration   : No active profile set, falling back to default profiles: default
+2020-05-11 14:53:25.968  INFO 3708 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-11 14:53:25.977  INFO 3708 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-11 14:53:25.977  INFO 3708 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-11 14:53:26.195  INFO 3708 --- [           main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-05-11 14:53:26.207  INFO 3708 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-11 14:53:26.207 DEBUG 3708 --- [           main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-11 14:53:26.207  INFO 3708 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 932 ms
+2020-05-11 14:53:26.221 DEBUG 3708 --- [           main] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2020-05-11 14:53:26.221 DEBUG 3708 --- [           main] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2020-05-11 14:53:26.352  INFO 3708 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-11 14:53:26.360 DEBUG 3708 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-11 14:53:26.401 DEBUG 3708 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2020-05-11 14:53:26.424 DEBUG 3708 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-11 14:53:26.432 DEBUG 3708 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-11 14:53:26.516  INFO 3708 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-11 14:53:26.520  INFO 3708 --- [           main] c.j.configuration.WebBootConfiguration   : Started WebBootConfiguration in 1.909 seconds (JVM running for 2.352)
 ```
 
 Verify request works
