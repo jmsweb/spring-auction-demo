@@ -23,7 +23,7 @@ git clone git@github.com:jmsweb/spring-auction-demo.git spring-auction-demo
 
 Navigate to `spring-auction-demo/test-cms`
 ```
-cd spring-boot/test-cms
+cd spring-auction-demo/test-cms
 ```
 
 Run maven build
