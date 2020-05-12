@@ -42,5 +42,13 @@
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- Module javax.xml.bind Removed From Java 11 (Eclipse/Tomcat Only) -->
+        <!-- mvn spring-boot:run -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 </project>

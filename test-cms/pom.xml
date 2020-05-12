@@ -60,6 +60,14 @@
                 <version>${h2-version}</version>
                 <scope>runtime</scope>
             </dependency>
+
+            <!-- Module javax.xml.bind Removed From Java 11 (Eclipse/Tomcat Debug Only) -->
+            <!-- mvn spring-boot:run OK Without javax.xml.bind -->
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>2.3.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
