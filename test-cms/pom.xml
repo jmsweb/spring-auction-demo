@@ -14,12 +14,6 @@
 
         <!-- Spring Boot version -->
         <spring-version>2.2.7.RELEASE</spring-version>
-
-        <!-- Tomcat Embed -->
-        <jasper-version>9.0.34</jasper-version>
-
-        <!-- JSTL version -->
-        <jstl-version>1.2</jstl-version>
     </properties>
 
     <repositories>
@@ -48,35 +42,21 @@
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring-version}</version>
             </dependency>
-
-            <!-- Tomcat Embed -->
-            <dependency>
-                <groupId>org.apache.tomcat.embed</groupId>
-                <artifactId>tomcat-embed-jasper</artifactId>
-                <version>${jasper-version}</version>
-            </dependency>
-
-            <!-- JSTL -->
-            <dependency>
-                <groupId>jstl</groupId>
-                <artifactId>jstl</artifactId>
-                <version>${jstl-version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
-    <!-- Plugin management -->
+    <!-- Plug-in management -->
     <build>
         <pluginManagement>
             <plugins>
-                <!-- Spring Boot plugin -->
+                <!-- Spring Boot Plug-in -->
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring-version}</version>
                 </plugin>
 
-                <!-- compiler plugin -->
+                <!-- Maven Compiler Plug-in (IDE friendly to prevent warning)-->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -87,29 +67,12 @@
                         <encoding>${project.build.sourceEncoding}</encoding>
                     </configuration>
                 </plugin>
+
+                <!-- Maven Apache WAR Plug-in (failOnMissingWebXml defaults to false for 3.1.0+) -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${war-plugin-version}</version>
-                    <configuration>
-                        <failOnMissingWebXml>false</failOnMissingWebXml>
-                        <!-- <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes> -->
-                        <archive>
-                            <manifest>
-                                <addClasspath>true</addClasspath>
-                                <classpathPrefix>lib/</classpathPrefix>
-                            </manifest>
-                        </archive>
-                        <webResources>
-                            <resource>
-                                <filtering>true</filtering>
-                                <directory>src/main/webapp</directory>
-                                <includes>
-                                    <include>**/web.xml</include>
-                                </includes>
-                            </resource>
-                        </webResources>
-                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
