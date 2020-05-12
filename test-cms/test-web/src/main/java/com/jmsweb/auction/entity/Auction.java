@@ -27,6 +27,9 @@ public class Auction {
     @OneToOne(targetEntity=Item.class, cascade=CascadeType.ALL)
     private Item item;
 
+    @OneToOne(targetEntity=Bid.class, cascade=CascadeType.ALL)
+    private Bid bid;
+
     public Long getAuctionItemId() {
         return auctionItemId;
     }
@@ -57,5 +60,13 @@ public class Auction {
 
     public void setItem(Item item) {
         this.item = item;
+    }
+
+    public Bid getBid() {
+        return bid;
+    }
+
+    public void setBid(Bid bid) {
+        this.bid = bid;
     }
 }
