@@ -1,0 +1,29 @@
+<div class="card my-5">
+    <div class="card-body">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Reserve Price</th>
+                    <th scope="col">Item Id</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Bid</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let auction of auctions">
+                    <td class="text-center align-middle">
+                        <a class="btn btn-link" [routerLink]="['/auction-item', auction.auctionItemId]">{{ auction.auctionItemId }}</a>
+                    </td>
+                    <td class="align-middle">{{ auction.reservePrice | currency }}</td>
+                    <td class="align-middle">{{ auction.item.itemId }}</td>
+                    <td class="align-middle">{{ auction.item.description }}</td>
+                    <td class="text-center align-middle">
+                        <a class="btn btn-outline-primary btn-block" [routerLink]="['/bid-item', auction.auctionItemId]">Bid</a>
+                        <!-- <button type="button" class="btn btn-outline-primary btn-block" (click)="bidItem(auction.auctionItemId)">Bid</button> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
