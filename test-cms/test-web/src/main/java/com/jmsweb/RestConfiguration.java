@@ -34,6 +34,8 @@ public class RestConfiguration extends SpringBootServletInitializer {
 
             Auction auction2 = new Auction();
             auction2.setReservePrice(new BigDecimal(2499.00));
+            auction2.setCurrentBid(new BigDecimal(2950.00));
+            auction2.setBidderName("ABC Dealership");
             auction2.setItem(new Item("efgh", "efgh item description"));
             auctionRepository.save(auction2);
 

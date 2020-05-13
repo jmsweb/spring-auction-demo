@@ -5,6 +5,8 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Reserve Price</th>
+                    <th scope="col">Current Bid</th>
+                    <th scope="col">Bidder Name</th>
                     <th scope="col">Item Id</th>
                     <th scope="col">Description</th>
                     <th scope="col">Bid</th>
@@ -16,6 +18,8 @@
                         <a class="btn btn-link" [routerLink]="['/auction-item', auction.auctionItemId]">{{ auction.auctionItemId }}</a>
                     </td>
                     <td class="align-middle">{{ auction.reservePrice | currency }}</td>
+                    <td class="align-middle">{{ auction.currentBid | currency }}</td>
+                    <td class="align-middle">{{ auction.bidderName }}</td>
                     <td class="align-middle">{{ auction.item.itemId }}</td>
                     <td class="align-middle">{{ auction.item.description }}</td>
                     <td class="text-center align-middle">

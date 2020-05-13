@@ -24,11 +24,10 @@ public class Auction {
     @Digits(integer=10, fraction=2)
     private BigDecimal reservePrice = BigDecimal.ZERO;
 
+    private String bidderName;
+
     @OneToOne(targetEntity=Item.class, cascade=CascadeType.ALL)
     private Item item;
-
-    @OneToOne(targetEntity=Bid.class, cascade=CascadeType.ALL)
-    private Bid bid;
 
     public Long getAuctionItemId() {
         return auctionItemId;
@@ -54,19 +53,19 @@ public class Auction {
         this.reservePrice = reservePrice;
     }
 
+    public String getBidderName() {
+        return bidderName;
+    }
+
+    public void setBidderName(String bidderName) {
+        this.bidderName = bidderName;
+    }
+
     public Item getItem() {
         return item;
     }
 
     public void setItem(Item item) {
         this.item = item;
-    }
-
-    public Bid getBid() {
-        return bid;
-    }
-
-    public void setBid(Bid bid) {
-        this.bid = bid;
     }
 }
