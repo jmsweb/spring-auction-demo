@@ -17,7 +17,7 @@ export class AuctionService {
     }
 
     public find(auctionItemId: string): Observable<Auction> {
-        return this.http.get<Auction>(this.auctionUrl + "/" + auctionItemId);
+        return this.http.get<Auction>(`${this.auctionUrl}/${auctionItemId}`);
     }
 
     public save(auction: Auction) {
