@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuctionService } from '../service/auction.service';
 import { Auction } from '../model/auction';
+import { Item } from '../model/auction';
 
 @Component({
     selector: 'app-auction-form',
@@ -18,6 +19,7 @@ export class AuctionFormComponent implements OnInit {
         private auctionService: AuctionService
     ) {
         this.auction = new Auction();
+        this.auction.item = new Item();
     }
 
     onSubmit() {
