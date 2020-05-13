@@ -156,7 +156,11 @@ I use [Git](http://github.com/) for versioning. For the versions available, see 
 
 ## Screenshots
 
-* [Home](test-cms/screenshot/home.png)
+* ![Home](test-cms/screenshot/home.png)
+* ![Auction List](test-cms/screenshot/auction-list.png)
+* ![Auction Detail](test-cms/screenshot/auction-detail.png)
+* ![Auction Bid](test-cms/screenshot/bid-auction.png)
+* ![Auction Add](test-cms/screenshot/add-auction.png)
 
 ## Authors
 
