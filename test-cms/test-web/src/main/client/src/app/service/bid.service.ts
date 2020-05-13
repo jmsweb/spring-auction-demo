@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Auction } from '../model/auction';
+import { Bid } from '../model/bid';
 
 @Injectable()
 export class BidService {
@@ -11,7 +11,7 @@ export class BidService {
         this.auctionUrl = "http://localhost:8080/bids";
     }
 
-    public save(auction: Auction) {
-        return this.http.post<Auction>(this.auctionUrl, auction);
+    public save(bid: Bid) {
+        return this.http.post<Bid>(this.auctionUrl, bid);
     }
 }

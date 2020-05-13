@@ -1,5 +1,6 @@
 package com.jmsweb.auction.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -60,14 +61,45 @@ public class AuctionController {
 
     @RequestMapping(path="bids", method=RequestMethod.POST)
     public BidDetail bidAuctionItem(@RequestBody Auction auctionBid) {
+
+        Auction verifyAuction = auctionRepository.findById(auctionBid.getAuctionItemId()).get();
+        if (verifyAuction == null) {
+            logger.error("[AuctionController::bidAuctionItem] encountered empty object [{}] for identifier", auctionBid.getAuctionItemId());
+            return null;
+        }
+
+        BigDecimal reservePrice = verifyAuction.getReservePrice();
+        BigDecimal currentPrice = verifyAuction.getCurrentBid();
+        BigDecimal submitPrice = auctionBid.getMaxAutoBidAmount();
+
+        if (submitPrice.compareTo(reservePrice) == -1) {
+            logger.info("Reserve Price {} is higher than Max Auto Bid Amount {}", reservePrice, submitPrice);
+            return null;
+        }
+
+        if (submitPrice.compareTo(currentPrice) == -1) {
+            logger.info("Current Price {} is higher than Max Auto Bid Amount {}", currentPrice, submitPrice);
+            return null;
+        }
+
+        if (submitPrice.subtract(currentPrice).compareTo(new BigDecimal(1)) == -1 || submitPrice.subtract(reservePrice).compareTo(new BigDecimal(1)) == -1) {
+            logger.info("Current Price {} or Reserve Price {} is a dollar under Max Auto Bid Amount {}", currentPrice, reservePrice, submitPrice);
+            return null;
+        }
+
         String message = String.format(
-                "Attempt bid by %s for auction #%s with amount of $%s",
+                "Attempt bid by %s for auction #%s with amount of $%.2f, updated Current Price to %.2f",
                 auctionBid.getBidderName(),
                 auctionBid.getAuctionItemId(),
-                auctionBid.getMaxAutoBidAmount()
+                submitPrice,
+                submitPrice
         );
         logger.info("[AuctionController::bidAuctionItem] {}", message);
-        Auction auction = auctionRepository.save(auctionBid);
-        return auctionRepository.getBidDetailByAuctionItemId(auction.getAuctionItemId());
+
+        verifyAuction.setCurrentBid(auctionBid.getMaxAutoBidAmount());
+        verifyAuction.setBidderName(auctionBid.getBidderName());
+
+        verifyAuction = auctionRepository.save(verifyAuction);
+        return auctionRepository.getBidDetailByAuctionItemId(verifyAuction.getAuctionItemId());
     }
 }
