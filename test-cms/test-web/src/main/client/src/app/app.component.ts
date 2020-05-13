@@ -8,8 +8,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
     title: string;
+    developer: string;
 
     constructor() {
         this.title = 'Spring Boot - Angular Auction Demo';
+        this.developer = 'Jason Schwebke';
     }
 }
