@@ -10,17 +10,20 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 1. Java 11
-2. Maven
-3. Git
-4. Eclipse, or IDE with Maven and Java support
+2. NPM 6+
+3. Angular CLI 9+
+4. Node 12+
+5. Maven 3.6+
+6. Git 2.23
+7. Eclipse 2020-03, or IDE with Maven and Java support
 
-### Installing
+## Clone Source Code
 
 Clone the repository onto local
 ```
 git clone git@github.com:jmsweb/spring-auction-demo.git spring-auction-demo
 ```
-
+## Start Backend Server (Spring-Boot/Java Framework)
 Navigate to `spring-auction-demo/test-cms`
 ```
 cd spring-auction-demo/test-cms
@@ -95,25 +98,36 @@ dorado@dorado-mac test-cms % mvn -pl test-web spring-boot:run
 2020-05-11 14:53:26.520  INFO 3708 --- [           main] c.j.configuration.WebBootConfiguration   : Started WebBootConfiguration in 1.909 seconds (JVM running for 2.352)
 ```
 
-Verify request works
+Verify Tomcat is listening
 
 ```
 curl http://localhost:8080
 ```
 
-Alternatively, open web browser and enter `http://localhost:8080/` in the URL
+Alternatively, open web browser and enter `http://localhost:8080/` in the URL to see Whitelabel Error Page
+
+## Start Frontend Server
+Navigate to `spring-auction-demo/test-cms/test-web/src/main/client`
+
+```
+cd spring-auction-demo/test-cms/test-web/src/main/client
+```
+
+Compile frontend source
+
+```
+ng serve --open
+```
+
+Open Web Browser
+
+```
+http://localhost:4200/
+```
 
 ## Running the tests
 
-To be added later.
-
-### Break down into end to end tests
-
-To be added later.
-
-### And coding style tests
-
-To be added later.
+I did not add test suite nor cases in this demo. In future, I would write Java and Angular assertion tests to filter out the edge cases.
 
 ## Deployment
 
@@ -128,16 +142,15 @@ test-cms/test-web/target/test-web.war
 * [Eclipse](https://www.eclipse.org/downloads/) - The IDE used
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Spring IO](https://spring.io/) - Spring Framework
-* [Java 11](https://www.oracle.com/java/technologies/javase-downloads.html)
+* [Java 11](https://www.oracle.com/java/technologies/javase-downloads.html) - Java Development Kit
 * [Spring Initialzer](https://start.spring.io) - Quickstart Spring Boot
-
-## Contributing
-
-To be added later.
+* [Angular CLI](https://cli.angular.io) - Angular Framework an CLI Executable
+* [npm](https://www.npmjs.com/get-npm) - Node Package Manager
+* [Mac Catalina 10.15.4](https://www.apple.com/macos/catalina/) MacOS Environment
 
 ## Versioning
 
-I use [Git](http://github.com/) for versioning. For the versions available, see the [tags on this repository](https://github.com/jmsweb/spring-boot/tags). 
+I use [Git](http://github.com/) for versioning. For the versions available, see the [tags on this repository](https://github.com/jmsweb/spring-auction-demo/tags). 
 
 ## Authors
 
@@ -152,4 +165,5 @@ This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENS
 
 ## Acknowledgments
 
-* Hat tip to [Baeldung](https://www.baeldung.com) whose guides were helpful
+* Hat tip to [Baeldung](https://www.baeldung.com) whose guides were helpful.
+* [Angular Documentation](https://angular.io/docs) for getting it to work.
