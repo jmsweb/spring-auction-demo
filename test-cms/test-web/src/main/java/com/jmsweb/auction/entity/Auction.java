@@ -24,6 +24,9 @@ public class Auction {
     @Digits(integer=10, fraction=2)
     private BigDecimal reservePrice = BigDecimal.ZERO;
 
+    @Digits(integer=10, fraction=2)
+    private BigDecimal maxAutoBidAmount = BigDecimal.ZERO;
+
     private String bidderName;
 
     @OneToOne(targetEntity=Item.class, cascade=CascadeType.ALL)
@@ -51,6 +54,14 @@ public class Auction {
 
     public void setReservePrice(BigDecimal reservePrice) {
         this.reservePrice = reservePrice;
+    }
+
+    public BigDecimal getMaxAutoBidAmount() {
+        return maxAutoBidAmount;
+    }
+
+    public void setMaxAutoBidAmount(BigDecimal maxAutoBidAmount) {
+        this.maxAutoBidAmount = maxAutoBidAmount;
     }
 
     public String getBidderName() {

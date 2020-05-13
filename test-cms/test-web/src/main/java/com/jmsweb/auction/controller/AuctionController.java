@@ -1,7 +1,6 @@
 package com.jmsweb.auction.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jmsweb.auction.entity.Auction;
 import com.jmsweb.auction.repository.AuctionRepository;
-import com.jmsweb.auction.repository.projection.AuctionItemId;
+import com.jmsweb.auction.repository.projection.BidDetail;
+import com.jmsweb.auction.repository.projection.AuctionDetail;
+import com.jmsweb.auction.repository.projection.AuctionIdentifier;
 
 @RestController
 @RequestMapping("/")
@@ -31,19 +32,19 @@ public class AuctionController {
     }
 
     @RequestMapping(path="auctionItems", method=RequestMethod.POST)
-    public AuctionItemId newAuctionItem(@RequestBody Auction auctionItem) {
+    public AuctionIdentifier newAuctionItem(@RequestBody Auction auctionItem) {
         Auction auction = auctionRepository.save(auctionItem);
-        return auctionRepository.findByAuctionItemId(auction.getAuctionItemId());
+        return auctionRepository.getIdentifierByAuctionItemId(auction.getAuctionItemId());
     }
 
     @RequestMapping(path="auctionItems/{auctionItemId}", method=RequestMethod.GET)
-    public Optional<Auction> getAuctionItem(@PathVariable("auctionItemId") String auctionItemId) {
-        Optional<Auction> auction = auctionRepository.findById(Long.parseLong(auctionItemId));
-        return auction;
+    public AuctionDetail getAuctionItem(@PathVariable("auctionItemId") String auctionItemId) {
+        return auctionRepository.getAuctionDetailByAuctionItemId(Long.parseLong(auctionItemId));
     }
 
     @RequestMapping(path="bids", method=RequestMethod.POST)
-    public String bidAuctionItem(@RequestBody String bid) {
-        return bid;
+    public BidDetail bidAuctionItem(@RequestBody Auction auctionBid) {
+        Auction auction = auctionRepository.save(auctionBid);
+        return auctionRepository.getBidDetailByAuctionItemId(auction.getAuctionItemId());
     }
 }

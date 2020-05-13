@@ -1,5 +1,5 @@
 package com.jmsweb.auction.repository.projection;
 
-public interface AuctionItemId {
+public interface AuctionIdentifier {
     String getAuctionItemId();
 }
