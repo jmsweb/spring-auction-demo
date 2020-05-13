@@ -16,6 +16,7 @@ What things you need to install the software and how to install them
 5. Maven 3.6+
 6. Git 2.23
 7. Eclipse 2020-03, or IDE with Maven and Java support
+8. Postman 7+
 
 ## Clone Source Code
 
@@ -146,16 +147,21 @@ test-cms/test-web/target/test-web.war
 * [Spring Initialzer](https://start.spring.io) - Quickstart Spring Boot
 * [Angular CLI](https://cli.angular.io) - Angular Framework an CLI Executable
 * [npm](https://www.npmjs.com/get-npm) - Node Package Manager
+* [Postman](https://www.postman.com)
 * [Mac Catalina 10.15.4](https://www.apple.com/macos/catalina/) MacOS Environment
 
 ## Versioning
 
 I use [Git](http://github.com/) for versioning. For the versions available, see the [tags on this repository](https://github.com/jmsweb/spring-auction-demo/tags). 
 
+## Screenshots
+
+* [Home](test-cms/screenshot/home.png)
+
 ## Authors
 
 * **Jason Schwebke** - *Initial work* - [jmsweb](https://github.com/jmsweb)
-* [jmsweb GitHub Pages](jmsweb.github.io)
+* [jmsweb GitHub Pages](https://jmsweb.github.io)
 
 See also the list of [contributors](https://github.com/jmsweb/spring-boot/contributors) who participated in this project.
 
